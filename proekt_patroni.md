@@ -52,7 +52,7 @@ c vm3 перешло управление на vm2 у кого статус Sync
 
 ### 7. Теперь проверим подключение к нашей бд по виртуальному ip  
 ![image](https://github.com/user-attachments/assets/9f5ab1bc-fc58-40bb-8278-98b48effcb6e)  
-подключение прошло успешно с обоих нодд haproxy по виртуальному ip  
+подключение прошло успешно с обоих нод haproxy по виртуальному ip  
 
 ### 8. Теперь остановим keepalived службу на haproxy2 и проверим что будет  
 ![image](https://github.com/user-attachments/assets/9352dd04-8a5b-41ae-b46e-ed9826ed2d1f)  
@@ -60,7 +60,23 @@ c vm3 перешло управление на vm2 у кого статус Sync
 Подключение также присутствует  
 Зашли в psql по виртуальному ip  
 
+### 9. Посмотрим еще дополнительно кто унас является лидером через curl -утилиту  
+![image](https://github.com/user-attachments/assets/83a1291d-c991-455f-a63e-71c845b2ca28) 
+Видим ,что лидер у нас vm2 - от него ответ 200 идет на мастер-запрос.  
+
+### 10. Проверим еще? где нам дает создать БД, на какой VM  
+Для теста еще раз переключим мастера на vm1 в ручном режиме.  
+Подключимся в psql на 3-х всех нодах(vm1,vm2,vm3)  
+И попробуем создать бд  
+![image](https://github.com/user-attachments/assets/a611b6ed-7ede-43e0-b5e5-176b6ae0d10e)  
+Видим, что дает создать только на мастере (vm1) ,что и логично.  
+На репликах выдает ошибку ,т.к. они реплики.  
+Еще раз curl посмотрим кто мастер  
+![image](https://github.com/user-attachments/assets/181965a9-6f0d-4d2d-bd30-b2201257193d)  
+ну и на haproxy в web-интерфейсе  
+![image](https://github.com/user-attachments/assets/1953afc8-1761-4c6a-9651-49ffe4834156)  
+и на второй ВМ haproxy  
+![image](https://github.com/user-attachments/assets/2e2cf047-5e70-4602-95eb-a61e4b9baaf3)  
 
 
 
-### 9.
