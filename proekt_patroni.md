@@ -40,11 +40,27 @@
 
 
 
-### 6. 
+### 6. Теперь пробуем автоматическое переключение (failover)  
+
+![image](https://github.com/user-attachments/assets/05adb547-3d03-4375-9a8c-b807caf2a791)  
+
+c vm3 перешло управление на vm2 у кого статус Sync Standby  
+ну и смотрим в haproxy  
+![image](https://github.com/user-attachments/assets/1234185d-1417-4a37-8afb-155116e517da)    
+и на второй ноде (192..159)  
+![image](https://github.com/user-attachments/assets/0a1f66a9-a8d8-4126-b03d-4fd37cf667c2)  
+
+### 7. Теперь проверим подключение к нашей бд по виртуальному ip  
+![image](https://github.com/user-attachments/assets/9f5ab1bc-fc58-40bb-8278-98b48effcb6e)  
+подключение прошло успешно с обоих нодд haproxy по виртуальному ip  
+
+### 8. Теперь остановим keepalived службу на haproxy2 и проверим что будет  
+![image](https://github.com/user-attachments/assets/9352dd04-8a5b-41ae-b46e-ed9826ed2d1f)  
+Мы видим ,что виртуальный ip перешел на haproxy 1-ю ноду.  
+Подключение также присутствует  
+Зашли в psql по виртуальному ip  
 
 
-### 7. 
 
-### 8.
 
 ### 9.
