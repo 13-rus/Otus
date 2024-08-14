@@ -106,5 +106,7 @@ c vm3 перешло управление на vm2 у кого статус Sync
 
 ![image](https://github.com/user-attachments/assets/2e2cf047-5e70-4602-95eb-a61e4b9baaf3)  
 
+### 11. Схема реализована.  
+
 
 
