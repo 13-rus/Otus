@@ -33,7 +33,7 @@
 
 ![image](https://github.com/user-attachments/assets/5b1308ab-ff24-4bc7-84c3-f6cd60863e1e)  
 
-### 4. Смотрим черех haproxy на web-форме  
+### 4. Смотрим через haproxy на web-форме  
 
 ![image](https://github.com/user-attachments/assets/9e95103d-a4ed-4f08-92d1-aa87e7cbb557)  
 
